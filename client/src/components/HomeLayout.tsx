@@ -7,9 +7,13 @@ const HomeLayout = () => {
     return (
         <>
             <div className="flex justify-center items-center p-4">
-                <img className="layout-image" src={firstAidKit} />
+                <div className="layout-image">
+                    <img src={firstAidKit} />
+                </div>
                 <h1 className="text-center mr-auto ml-auto text-4xl">MediLingo</h1>
-                <UserButton afterSignOutUrl="/" />
+                <div className="layout-image">
+                    <UserButton afterSignOutUrl="/" />
+                </div>
             </div>
             <Outlet />
         </>

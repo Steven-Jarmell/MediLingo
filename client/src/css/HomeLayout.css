@@ -1,7 +1,9 @@
 .layout-image {
     height: 5rem;
     width: 6rem;
+    justify-content: center;
 }
+
 .cl-avatarBox{
     height: 3.5rem;
     width: 3.5rem;

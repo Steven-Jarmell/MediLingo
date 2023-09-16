@@ -7,26 +7,42 @@ const h = window.innerHeight;
 console.log("w: " + w);
 console.log("h: " + h);
 
-const initialEdges = [{ id: 'e1-2', source: '0', target: '1', animated: true},
-                        { id: 'e1-3', source: '0', target: '2', animated: true },
-                        { id: 'e1-4', source: '0', target: '3', animated: true },
-                        { id: 'e1-5', source: '0', target: '4', animated: true }];
+const initialEdges = [{ id: 'e0-1', source: '0', target: '1', animated: true},
+                        { id: 'e0-2', source: '0', target: '2', animated: true },
+                        { id: 'e0-3', source: '0', target: '3', animated: true },
+                        { id: 'e0-4', source: '0', target: '4', animated: true },
+                        { id: 'e1-5', source: '1', target: '5', animated: true },
+                        { id: 'e2-5', source: '2', target: '5', animated: true },
+                        { id: 'e3-5', source: '3', target: '5', animated: true },
+                        { id: 'e4-5', source: '4', target: '5', animated: true }];
 
 const PathComponent = () => {
 
-    const navigate = useNavigate();
+    const flowStyle = {
+        'font-size': '20px',
+        'width': '300px',
+        
+    };
 
     const initialNodes = [
-        { id: '0', position: {x: w/2-50, y:0}, data: { label: 'Asthma' }},
-        { id: '1', position: {x: w*(1/8)-75, y: h/8}, data: { label: 'Allergenic Asthma'} },
-        { id: '2', position: {x: w*(3/8)-75, y: h/8}, data: { label: 'Non-Allergenic Asthma'} },
-        { id: '3', position: {x: w*(5/8)-50, y: h/8}, data: { label: 'Steroid-Resistant Asthma'} },
-        { id: '4', position: {x: w*(7/8)-50, y: h/8}, data: { label: 'Exercise-Induced Asthma'} },
+        { id: '0', position: {x: w/2-150, y:0}, data: { label: 'Asthma' }, style: flowStyle },
+        { id: '1', position: {x: w*(1/8)-150, y: h/8}, data: { label: 'Allergenic Asthma'}, style: flowStyle },
+        { id: '2', position: {x: w*(3/8)-150, y: h/8}, data: { label: 'Non-Allergenic Asthma'}, style: flowStyle },
+        { id: '3', position: {x: w*(5/8)-100, y: h/8}, data: { label: 'Steroid-Resistant Asthma'}, style: flowStyle },
+        { id: '4', position: {x: w*(7/8)-100, y: h/8}, data: { label: 'Exercise-Induced Asthma'}, style: flowStyle },
+        { id: '5', position: {x: w/2-150, y: h/2}, data: { label: 'Resources'}, style: flowStyle },
     ];
 
+    const navigate = useNavigate();
+
     const handleNodeClick = (event, node) => {
-        navigate("../../lesson/" + node.id);
-      };
+        if (node.id === '5') {
+            navigate("../../research");
+        }
+        else {
+            navigate("../../lesson/" + node.id);
+        }
+    };
 
     return (
         <div className="flex justify-center w-screen h-screen">
@@ -37,7 +53,6 @@ const PathComponent = () => {
                 />
         </div>
     );
-  
 }
 export default PathComponent;
 
