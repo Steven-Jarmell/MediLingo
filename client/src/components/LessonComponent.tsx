@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import LessonHeader from "./LessonHeader";
+import Confetti from "react-confetti";
 
 const questionTypes = ["General", "Allergic", "Non-Allergic", "Exercise"];
 
@@ -13,6 +14,12 @@ const LessonComponent = () => {
     const [showIsCorrect, setShowIsCorrect] = useState(false);
     const [showSummary, setShowSummary] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
+    const [currentTarget, setCurrentTarget] = useState();
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    const nav = useNavigate();
 
     // When the page loads, fetch the questions
     useEffect(() => {
@@ -40,6 +47,10 @@ const LessonComponent = () => {
                 setIsCorrect(false);
                 setShowIsCorrect(false);
                 setShowSummary(false);
+                currentTarget?.classList.toggle(
+                    "[background-color:var(--main-theme)]"
+                );
+                setCurrentTarget(null);
             } else {
                 setIsCompleted(true);
             }
@@ -65,9 +76,18 @@ const LessonComponent = () => {
 
     if (isCompleted) {
         return (
-            <div>
-                <h1>Congratulations!</h1>
-                <p>You have completed lesson {id}.</p>
+            <div className="mt-8">
+                <Confetti width={width} height={height} />
+                <h1 className="text-center text-4xl">Congratulations!</h1>
+                <p className="text-center text-4xl">
+                    You have completed lesson {id}.
+                </p>
+                <button
+                    onClick={() => nav("/home")}
+                    className="text-2xl flex justify-center w-fit mt-6 [background-color:var(--main-theme)] hover:[background-color:var(--secondary-theme)] text-white font-semibold hover:text-white py-2 px-4 border [border-color:var(--main-theme)] hover:border-transparent rounded ml-auto mr-auto transition ease-in"
+                >
+                    Return to Paths
+                </button>
             </div>
         );
     }
@@ -94,6 +114,13 @@ const LessonComponent = () => {
                                   key={index}
                                   onClick={(e) => {
                                       console.log(e.target.innerText);
+                                      currentTarget?.classList.toggle(
+                                          "[background-color:var(--main-theme)]"
+                                      );
+                                      e.target.classList.toggle(
+                                          "[background-color:var(--main-theme)]"
+                                      );
+                                      setCurrentTarget(e.target);
                                       setAnswer(e.target.innerText);
                                   }}
                                   className="flex justify-center mt-4 bg-white border hover:cursor-pointer [border-color:var(--main-theme)] w-fit px-8 py-2 rounded ml-auto mr-auto text-xl"
