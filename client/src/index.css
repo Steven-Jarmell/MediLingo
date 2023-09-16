@@ -4,7 +4,10 @@
 @tailwind utilities;
 
 html, 
-body,
+body {
+    background: radial-gradient(circle, #fff0a5, #ffa3a3);
+}
+
 #root {
     height: 100%;
     width: 100%;
