@@ -9,6 +9,7 @@ const HomeLayout = () => {
                 <UserButton afterSignOutUrl="/" />
             </div>
             <Outlet />
+            <p className="text-center fixed bottom-[24px] w-full">Made with ❤️</p>
         </>
     );
 };

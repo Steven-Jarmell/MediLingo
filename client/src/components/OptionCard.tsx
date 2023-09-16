@@ -1,5 +1,14 @@
-const OptionCard = () => {
-    return <div>Option Card</div>
-}
+type Props = {
+    name: string;
+    path: string;
+};
 
-export default OptionCard
+const OptionCard = ({ name, path }: Props) => {
+    return (
+        <div className="">
+            <span>{name}</span>
+        </div>
+    );
+};
+
+export default OptionCard;

@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Landing from "./components/Landing";
 import PathComponent from "./components/PathComponent";
 import HomeComponent from "./components/HomeComponent";
@@ -12,46 +12,19 @@ import {
     RedirectToSignIn,
     SignIn,
     SignUp,
-    useUser,
 } from "@clerk/clerk-react";
 import ConditionLayout from "./components/ConditionLayout";
-import { useEffect } from "react";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key");
 }
 const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
 
-function NavigateToHome() {
-    const nav = useNavigate();
-    useEffect(() => {
-        nav("/home");
-    }, []);
-
-    return (
-        <>
-            <Outlet />
-        </>
-    );
-}
-
 export default function App() {
     return (
         <ClerkProvider publishableKey={clerkPubKey}>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <SignedIn>
-                                <NavigateToHome />
-                            </SignedIn>
-                            <SignedOut>
-                                <Layout />
-                            </SignedOut>
-                        </>
-                    }
-                >
+                <Route path="/" element={<Layout />}>
                     <Route index element={<Landing />} />
 
                     <Route
@@ -74,7 +47,7 @@ export default function App() {
                                     routing="path"
                                     path="/sign-up"
                                     redirectUrl="/home"
-                                />{" "}
+                                />
                             </div>
                         }
                     />
@@ -92,12 +65,15 @@ export default function App() {
                             </>
                         }
                     >
+                        <Route index element={<HomeComponent />} />
+                    </Route>
+
                     <Route
                         path="conditions"
                         element={
                             <>
                                 <SignedIn>
-                                    <ConditionLayout/>
+                                    <ConditionLayout />
                                 </SignedIn>
                                 <SignedOut>
                                     <RedirectToSignIn />
@@ -105,12 +81,11 @@ export default function App() {
                             </>
                         }
                     />
-                        <Route index element={<HomeComponent />} />
-                        <Route path="path">
-                            <Route path=":id" element={<PathComponent />} />
-                            </Route>
-                        <Route path="*" element={<ErrorPage errorCode={404} />} />
+
+                    <Route path="path">
+                        <Route path=":id" element={<PathComponent />} />
                     </Route>
+                    <Route path="*" element={<ErrorPage errorCode={404} />} />
                 </Route>
             </Routes>
         </ClerkProvider>
