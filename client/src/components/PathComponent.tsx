@@ -23,7 +23,7 @@ const PathComponent = () => {
         { id: '0', position: {x: w/2-150, y:0}, data: { label: 'Asthma' }, className: "tree_node" },
         { id: '1', position: {x: w*(1/8)-150, y: h/8}, data: { label: 'Allergenic Asthma'}, className: "tree_node"},
         { id: '2', position: {x: w*(3/8)-150, y: h/8}, data: { label: 'Non-Allergenic Asthma'}, className: "tree_node" },
-        { id: '3', position: {x: w*(5/8)-100, y: h/8}, data: { label: 'Steroid-Resistant Asthma'}, className: "tree_node" },
+        { id: '3', position: {x: w*(5/8)-100, y: h/8}, data: { label: 'Occupational Asthma'}, className: "tree_node" },
         { id: '4', position: {x: w*(7/8)-100, y: h/8}, data: { label: 'Exercise-Induced Asthma'}, className: "tree_node" },
         { id: '5', position: {x: w/2-200, y: h/2}, data: { label: 'Resources'}, className: "resources_node" },
     ];
@@ -38,14 +38,6 @@ const PathComponent = () => {
             navigate("../../lesson/" + node.id);
         }
     };
-
-    const completed_lessons = localStorage.getItem('lessons-completed')?.split(';');
-    initialNodes.forEach(element => {
-        if(completed_lessons?.includes(element.id)) {
-            element.data.label = element.data.label + ' Completed!' 
-            element.className = "completed_tree_node";
-        }
-    });
 
     return (
         <div className="flex justify-center w-screen h-screen">

@@ -16,8 +16,8 @@ const ConditionLayout = () => {
                     onClick={() => navigate('/path/Diabetes')}
                 />
                 <Condition
-                    title="Eczema"
-                    onClick={() => navigate('/path/Eczema')}
+                    title="COVID"
+                    onClick={() => navigate('/path/COVID')}
                 />
             </div>
             <Outlet />
