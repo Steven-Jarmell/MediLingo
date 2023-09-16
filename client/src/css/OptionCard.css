@@ -23,3 +23,9 @@
 
     background-color: var(--secondary-theme);
 }
+.option-card__icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}

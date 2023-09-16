@@ -1,12 +1,18 @@
 import { useEffect } from "react";
 import OptionCard from "./OptionCard";
 
+import asthma from "../assets/inhaler.png";
+import diabetes from "../assets/diabetes.png";
+import stomach from "../assets/stomach.png";
+import covid from "../assets/covid.png";
+
 const options = [
-    { name: "Asthma", path: "/asthma" },
-    { name: "Diabetes", path: "/diabetes" },
-    { name: "Eczema ", path: "/eczema" },
-    { name: "Covid", path: "/covid" },
+    { name: "Asthma", path: "/asthma", imgSrc: asthma },
+    { name: "Diabetes", path: "/diabetes", imgSrc: diabetes },
+    { name: "stomach", path: "/stomach", imgSrc: stomach },
+    { name: "Covid", path: "/covid", imgSrc: covid },
 ];
+
 
 const HomeComponent = () => {
 
@@ -27,6 +33,7 @@ const HomeComponent = () => {
                     key={option.name}
                     name={option.name}
                     path={option.path}
+                    imgSrc={option.imgSrc}
                 />
             ))}
         </div>
