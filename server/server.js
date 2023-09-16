@@ -85,7 +85,7 @@ app.delete('/questions/:id', async (req, res) => {
 
 const start = async () => {
   try {
-    await mongoose.connect('mongodb+srv://boss:boss@pitt2023.61dxycp.mongodb.net/?retryWrites=true&w=majority');
+    await mongoose.connect('SECRET');
     app.listen(PORT, () => {
       console.log(`Server is Successfully Running, and App is listening on port ${PORT}`);
     });
