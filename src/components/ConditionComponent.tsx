@@ -1,14 +1,18 @@
-type ConditionProps = {
+type Props = {
     title: string
-    onClick: () => void
+    onClick: any
 }
 
-export const Condition: React.FC<ConditionProps> = ({ title, onClick }) => {
-    <button 
-        onClick = { onClick } 
-        class="bg-white hover:bg-blue-300 w-20 h-20 rounded-sm">
-        <h1 class="font-bold"> 
-            { title } 
-            </h1>
-    </button>
+const Condition = ({ title, onClick }: Props) => {
+    return (
+        <button 
+            onClick = { onClick } 
+            className="bg-white hover:bg-blue-300 w-20 h-20 rounded-sm">
+            <h1 className="font-bold"> 
+                { title } 
+                </h1>
+        </button>
+    );
 }
+
+export default Condition
