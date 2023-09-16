@@ -1,25 +1,205 @@
-{
-    "questionText": "Which of the following can be triggers for asthma symptoms?",
-    "openEnded": false,
-    "category": "Asthma",
-    "saveToProfile": false,
-    "options": [
-        "Dust",
-        "Pollen",
-        "Smoke",
-        "Pet dander",
-        "Exercise",
-        "Cold air",
-        "Stress",
-        "None of the above"
-    ],
-    "correctOption": [
-        "Dust",
-        "Pollen",
-        "Smoke",
-        "Pet dander",
-        "Exercise",
-        "Cold air",
-        "Stress"
-    ]
-}
+[
+    {
+        "questionText": "What do you understand by the term 'asthma'?",
+        "openEnded": true,
+        "saveToProfile": false,
+        "summary": "Asthma is a lung condition causing episodes of wheezing, breathlessness, and coughing. It's managed through medication and avoiding triggers. Efforts like CDC’s National Asthma Control Program aim to improve the quality of life for asthma patients by funding educational and training initiatives."
+    },
+    {
+        "questionText": "How do you think asthma affects the respiratory system?",
+        "openEnded": true,
+        "saveToProfile": false,
+        "summary": "Asthma inflames and narrows the airways, making breathing difficult. This inflammation can cause swelling, muscle contractions around the airways, and increased mucus production, leading to symptoms like wheezing, coughing, and shortness of breath."
+    },
+    {
+        "questionText": "How would you differentiate between a mild and a severe asthma attack?",
+        "openEnded": true,
+        "saveToProfile": false,
+        "summary": "A mild asthma attack may involve mild wheezing and shortness of breath that resolves with quick-relief inhaler use. A severe attack can lead to extreme difficulty in breathing, inability to speak in full sentences, bluish lips or face, and may require emergency medical attention. It's essential to treat even mild symptoms promptly to prevent them from escalating."
+    },
+    {
+        "questionText": "Are you aware that there are different types of asthma? Based on the descriptions, select the type you think you have:",
+        "openEnded": false,
+        "saveToProfile": true,
+        "options": [
+            {
+                "type": "Allergic Asthma",
+                "description": "Triggered by allergens like pollen, mold, dust mites, and pet dander."
+            },
+            {
+                "type": "Non-Allergic Asthma",
+                "description": "Caused by factors other than allergens, like cold air, exercise, smoke, strong odors, or illnesses like a cold or the flu."
+            },
+            {
+                "type": "Steroid-Resistant Asthma",
+                "description": "Does not respond to corticosteroid treatment as expected."
+            }
+        ]
+    },
+    {
+        "introStatement": "Below are the general medications commonly used for asthma. Additionally, based on your specific type of asthma, there are specialized medications:",
+        "openEnded": false,
+        "saveToProfile": true,
+        "asthmaTypes": [
+            {
+                "type": "Allergic Asthma",
+                "medicationOptions": [
+                    {
+                        "name": "Inhaled corticosteroids",
+                        "description": "These reduce inflammation in the airways and are a primary treatment for persistent asthma.",
+                        "pros": [
+                            "Effective for long-term control",
+                            "Reduces need for oral steroids"
+                        ],
+                        "cons": [
+                            "Can cause mouth/throat infections if not rinsed after use",
+                            "Potential for reduced growth in children"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Leukotriene modifiers",
+                        "description": "Oral medications that treat both asthma and allergies by blocking leukotrienes.",
+                        "pros": [
+                            "Can reduce asthma symptoms",
+                            "Few side effects for most people"
+                        ],
+                        "cons": [
+                            "Might not be as effective as inhaled corticosteroids",
+                            "Can lead to psychological side effects"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Long-acting beta agonists",
+                        "description": "Bronchodilators that are used in combination with inhaled corticosteroids to control moderate to severe asthma.",
+                        "pros": [
+                            "Helps in keeping the airways open",
+                            "Can decrease the amount of inhaled corticosteroid needed"
+                        ],
+                        "cons": [
+                            "Not for sudden symptoms",
+                            "Rarely, they can lead to severe asthma attacks"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Omalizumab (Xolair)",
+                        "description": "An anti-IgE antibody given as an injection to treat severe allergic asthma.",
+                        "pros": [
+                            "Targeted therapy for allergic asthma",
+                            "Can reduce the number of asthma attacks"
+                        ],
+                        "cons": [
+                            "Needs frequent medical visits for injections",
+                            "Potential for allergic reactions to the medication"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/drugs-supplements/omalizumab-subcutaneous-route/description/drg-20064820"
+                    }
+                ]
+            },
+            {
+                "type": "Non-Allergic Asthma",
+                "medicationOptions": [
+                    {
+                        "name": "Inhaled corticosteroids",
+                        "description": "These reduce inflammation in the airways and are a primary treatment for persistent asthma.",
+                        "pros": [
+                            "Effective for long-term control",
+                            "Reduces need for oral steroids"
+                        ],
+                        "cons": [
+                            "Can cause mouth/throat infections if not rinsed after use",
+                            "Potential for reduced growth in children"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Leukotriene modifiers",
+                        "description": "Oral medications that treat both asthma and allergies by blocking leukotrienes.",
+                        "pros": [
+                            "Can reduce asthma symptoms",
+                            "Few side effects for most people"
+                        ],
+                        "cons": [
+                            "Might not be as effective as inhaled corticosteroids",
+                            "Can lead to psychological side effects"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Long-acting beta agonists",
+                        "description": "Bronchodilators that are used in combination with inhaled corticosteroids to control moderate to severe asthma.",
+                        "pros": [
+                            "Helps in keeping the airways open",
+                            "Can decrease the amount of inhaled corticosteroid needed"
+                        ],
+                        "cons": [
+                            "Not for sudden symptoms",
+                            "Rarely, they can lead to severe asthma attacks"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    }
+                ]
+            },
+            {
+                "type": "Steroid-Resistant Asthma",
+                "medicationOptions": [
+                    {
+                        "name": "Biologics",
+                        "description": "These are newer medications that are used for forms of severe asthma that don't respond to other treatments.",
+                        "pros": [
+                            "Can target specific pathways involved in asthma",
+                            "May reduce the number of asthma attacks"
+                        ],
+                        "cons": [
+                            "Can be expensive",
+                            "Potential for side effects including allergic reactions"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Higher dose inhaled or oral corticosteroids",
+                        "description": "These are used to control inflammation in the airways but at higher doses for those resistant to standard doses.",
+                        "pros": [
+                            "Can provide relief when standard doses don't work"
+                        ],
+                        "cons": [
+                            "Increased risk of side effects",
+                            "Potential for reduced growth in children",
+                            "Bone thinning",
+                            "Skin thinning"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Leukotriene modifiers",
+                        "description": "Oral medications that treat both asthma and allergies by blocking leukotrienes.",
+                        "pros": [
+                            "Can reduce asthma symptoms",
+                            "Few side effects for most people"
+                        ],
+                        "cons": [
+                            "Might not be as effective as inhaled corticosteroids",
+                            "Can lead to psychological side effects"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    },
+                    {
+                        "name": "Long-acting beta agonists",
+                        "description": "Bronchodilators that are used in combination with inhaled corticosteroids to control moderate to severe asthma.",
+                        "pros": [
+                            "Helps in keeping the airways open",
+                            "Can decrease the amount of inhaled corticosteroid needed"
+                        ],
+                        "cons": [
+                            "Not for sudden symptoms",
+                            "Rarely, they can lead to severe asthma attacks"
+                        ],
+                        "sourceLink": "https://www.mayoclinic.org/diseases-conditions/asthma/in-depth/asthma-medications/art-20045557"
+                    }
+                ]
+            }
+        ]
+    }
+]
