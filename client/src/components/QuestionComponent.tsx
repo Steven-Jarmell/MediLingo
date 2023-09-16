@@ -16,10 +16,8 @@ const Question = ({
   correctOptions,
 }: QuestionProps) => {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const checkAnswer = (option: string) => {
-    setSelectedOption(option);
     if (correctOptions.includes(option)) {
       setShowAnswer(true);
     } else {

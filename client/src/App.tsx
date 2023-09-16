@@ -14,6 +14,7 @@ import {
     SignUp,
     useUser,
 } from "@clerk/clerk-react";
+import ConditionLayout from "./components/ConditionLayout";
 import { useEffect } from "react";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
@@ -91,6 +92,19 @@ export default function App() {
                             </>
                         }
                     >
+                    <Route
+                        path="conditions"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <ConditionLayout/>
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn />
+                                </SignedOut>
+                            </>
+                        }
+                    />
                         <Route index element={<HomeComponent />} />
                         <Route path="path">
                             <Route path=":id" element={<PathComponent />} />
