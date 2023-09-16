@@ -68,20 +68,6 @@ export default function App() {
                         <Route index element={<HomeComponent />} />
                     </Route>
 
-                    <Route
-                        path="conditions"
-                        element={
-                            <>
-                                <SignedIn>
-                                    <ConditionLayout />
-                                </SignedIn>
-                                <SignedOut>
-                                    <RedirectToSignIn />
-                                </SignedOut>
-                            </>
-                        }
-                    />
-
                     <Route path="path">
                         <Route path=":id" element={<PathComponent />} />
                     </Route>
