@@ -31,7 +31,7 @@ export default function App() {
                     <Route
                         path="/sign-in/*"
                         element={
-                            <div className="flex justify-center items-center h-full">
+                            <div className="flex justify-center align-middle mt-10">
                                 <SignIn
                                     routing="path"
                                     path="/sign-in"
@@ -43,7 +43,7 @@ export default function App() {
                     <Route
                         path="/sign-up/*"
                         element={
-                            <div className="flex justify-center">
+                            <div className="flex justify-center mt-4">
                                 <SignUp
                                     routing="path"
                                     path="/sign-up"

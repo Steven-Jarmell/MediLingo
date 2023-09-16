@@ -9,7 +9,7 @@ const LessonComponent = () => {
     const [questions, setQuestions] = useState([]);
     const [number, setNumber] = useState<number>(0);
     const [answer, setAnswer] = useState("");
-    const [isCorrect, setIsCorrect] = useState(null);
+    const [isCorrect, setIsCorrect] = useState(false);
     const [showSummary, setShowSummary] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
 
@@ -39,7 +39,7 @@ const LessonComponent = () => {
             }
         } else {
             if (questions[number]?.openEnded) {
-                if (answer.length >= 50) {
+                if (answer.length >= 0) {
                     setIsCorrect(true);
                     setShowSummary(true);
                 }
@@ -65,10 +65,8 @@ const LessonComponent = () => {
 
     return (
         <div>
-            <h1>Lesson Page</h1>
-            <p>{id}</p>
+            <LessonHeader number={number} numQuestions={questions.length} />
             <p>{questions[number]?.questionText}</p>
-            <p>{number}</p>
             {questions[number]?.openEnded === true ? (
                 <textarea value={answer} onChange={(e) => setAnswer(e.target.value)} />
             ) : null}

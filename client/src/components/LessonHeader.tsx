@@ -8,7 +8,7 @@ const LessonHeader = ({ number, numQuestions }: Props) => {
     
     const containerStyles = {
         height: 20,
-        width: "100%",
+        width: "90%",
         backgroundColor: "#e0e0de",
         borderRadius: 50,
         margin: 50,
@@ -17,6 +17,7 @@ const LessonHeader = ({ number, numQuestions }: Props) => {
     const fillerStyles = {
         height: "100%",
         width: `${completed}%`,
+        backgroundColor: "#3FD0C9",
         transition: "width 1s ease-in-out",
         borderRadius: "inherit",
         textAlign: "right",
@@ -31,7 +32,7 @@ const LessonHeader = ({ number, numQuestions }: Props) => {
     return (
         <div style={containerStyles}>
             <div style={fillerStyles}>
-                <span style={labelStyles}>{`${completed}%`}</span>
+                <span style={labelStyles}></span>
             </div>
         </div>
     );

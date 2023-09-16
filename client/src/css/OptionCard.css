@@ -2,6 +2,7 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 4rem 3.5rem;
+    background-color: #F8F8F8;
 }
 
 .option-card__name {
