@@ -1,15 +1,27 @@
-.pitt-me{
+.pitt-me {
     width: 100px;
     height: 100px;
     object-fit: cover;
     margin-bottom: 10px;
-    backgroundImage: url(pittplusme.svg);
+    background-image: url('../assets/pittplusme.svg');
 }
 
-.nih{
+.nih {
     width: 100px;
     height: 100px;
     object-fit: cover;
     margin-bottom: 10px;
-    backgroundImage: url(nih.png);
+    background-image: url('../assets/nihclinicaltrials.png');  
+    background-size: contain;  
+    background-repeat: no-repeat;  
+    background-position: center;  
+}
+
+
+.research-match {
+    width: 92px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background-image: url('../assets/rm.svg');
 }
