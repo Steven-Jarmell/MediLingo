@@ -1,8 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
+const cors = require('cors')
 const app = express();
 mongoose.set('strictQuery', false);
 app.use(express.json());
+app.use(cors())
 const PORT = 3000;
 
 // Define a Mongoose schema for the question data
@@ -37,14 +40,14 @@ const userSchema = new mongoose.Schema({
 
 // Create a Mongoose model based on the schema
 const User = mongoose.model('User', userSchema);
-const Question = mongoose.model('Question', questionSchema);
+const Questions = mongoose.model('Questions', questionSchema);
 
 // CRUD routes for questions
 
 // Create a new question
 app.post('/questions', async (req, res) => {
   try {
-    const question = new Question(req.body);
+    const question = new Questions(req.body);
     await question.save();
     res.status(201).send(question);
   } catch (error) {
@@ -55,7 +58,8 @@ app.post('/questions', async (req, res) => {
 // Get all questions
 app.get('/questions', async (req, res) => {
   try {
-    const questions = await Question.find();
+    const questions = await Questions.find().lean();
+    console.log(questions)
     res.status(200).send(questions);
   } catch (error) {
     res.status(500).send(error);
@@ -65,7 +69,7 @@ app.get('/questions', async (req, res) => {
 // Get a question by ID
 app.get('/questions/:id', async (req, res) => {
   try {
-    const question = await Question.findById(req.params.id);
+    const question = await Questions.findById(req.params.id);
     if (!question) {
       res.status(404).send('Question not found');
     } else {
@@ -79,7 +83,7 @@ app.get('/questions/:id', async (req, res) => {
 // Update a question by ID
 app.put('/questions/:id', async (req, res) => {
   try {
-    const question = await Question.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    const question = await Questions.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
     if (!question) {
       res.status(404).send('Question not found');
     } else {
@@ -93,7 +97,7 @@ app.put('/questions/:id', async (req, res) => {
 // Delete a question by ID
 app.delete('/questions/:id', async (req, res) => {
   try {
-    const question = await Question.findByIdAndDelete(req.params.id);
+    const question = await Questions.findByIdAndDelete(req.params.id);
     if (!question) {
       res.status(404).send('Question not found');
     } else {
@@ -104,17 +108,25 @@ app.delete('/questions/:id', async (req, res) => {
   }
 });
 
-const start = async () => {
-  try {
-    await mongoose.connect('SECRET',{   
-        useNewUrlParser: true,
-        useUnifiedTopology: true,});
-    app.listen(PORT, () => {
-      console.log(`Server is Successfully Running, and App is listening on port ${PORT}`);
-    }); 
-  } catch (error) {
-    console.error('Error occurred, server can\'t start', error);
-  }
-};
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL)
+    } catch (err) {
+        console.log(err);
+    }
+}
 
-start();
+connectDB()
+
+mongoose.connection.once("open", () => {
+	console.log("Connected to MongoDB");
+	app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});
+
+mongoose.connection.on("error", (err) => {
+	console.log(err);
+	logEvents(
+		`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`,
+		"mongoErrLog.log"
+	);
+});
