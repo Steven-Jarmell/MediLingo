@@ -39,6 +39,14 @@ const PathComponent = () => {
         }
     };
 
+    const completed_lessons = localStorage.getItem('lessons-completed')?.split(';');
+    initialNodes.forEach(element => {
+        if(completed_lessons?.includes(element.id)) {
+            element.data.label = element.data.label + ' Completed!' 
+            element.className = "completed_tree_node";
+        }
+    });
+
     return (
         <div className="flex justify-center w-screen h-screen">
             <ReactFlow 

@@ -4,6 +4,13 @@
     border-radius: 10px !important;
 }
 
+.completed_tree_node {
+    font-size: 20px !important;
+    width: 300px !important;
+    border-radius: 10px !important;
+    background-color: rgb(0, 213, 0) !important;
+}
+
 .tree_node:hover {
     cursor: pointer !important;
     /* Firefox */
