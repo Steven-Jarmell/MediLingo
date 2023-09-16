@@ -14,7 +14,11 @@ import {
     SignUp,
     useUser,
 } from "@clerk/clerk-react";
+<<<<<<< HEAD
 import { useEffect } from "react";
+=======
+import ConditionLayout from "./components/ConditionLayout";
+>>>>>>> c88370d (Route ID)
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key");
@@ -91,10 +95,31 @@ export default function App() {
                             </>
                         }
                     >
+                    <Route
+                        path="conditions"
+                        element={
+                            <>
+                                <SignedIn>
+                                    <ConditionLayout/>
+                                </SignedIn>
+                                <SignedOut>
+                                    <RedirectToSignIn />
+                                </SignedOut>
+                            </>
+                        }
+                    />
                         <Route index element={<HomeComponent />} />
+<<<<<<< HEAD
                     </Route>
 
                     <Route path="*" element={<ErrorPage errorCode={404} />} />
+=======
+                        <Route path="path">
+                            <Route path=":id" element={<PathComponent />} />
+                            </Route>
+                        <Route path="*" element={<ErrorPage errorCode={404} />} />
+                    </Route>
+>>>>>>> c88370d (Route ID)
                 </Route>
             </Routes>
         </ClerkProvider>
