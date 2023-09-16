@@ -92,8 +92,11 @@ const LessonComponent = () => {
                         ? questions[number]["options"].map((option, index) => (
                               <div
                                   key={index}
-                                  onChange={(e) => setAnswer(e.target.value)}
-                                  className="flex justify-center mt-4"
+                                  onClick={(e) => {
+                                      console.log(e.target.innerText);
+                                      setAnswer(e.target.innerText);
+                                  }}
+                                  className="flex justify-center mt-4 bg-white border hover:cursor-pointer [border-color:var(--main-theme)] w-fit px-8 py-2 rounded ml-auto mr-auto text-xl"
                               >
                                   {option}
                               </div>
@@ -116,14 +119,20 @@ const LessonComponent = () => {
                         </p>
                     )}
                 </div>
-                {showSummary && <div className="flex-1 p-6">
-                    {
-                        <div>
-                            <span className="text-3xl font-bold">Summary:</span>
-                            <p className="mt-4 text-2xl">{questions[number]?.summary}</p>
-                        </div>
-                    }
-                </div>}
+                {showSummary && (
+                    <div className="flex-1 p-6">
+                        {
+                            <div>
+                                <span className="text-3xl font-bold">
+                                    Summary:
+                                </span>
+                                <p className="mt-4 text-2xl">
+                                    {questions[number]?.summary}
+                                </p>
+                            </div>
+                        }
+                    </div>
+                )}
             </div>
         </>
     );
