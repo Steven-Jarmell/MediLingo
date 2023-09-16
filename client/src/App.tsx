@@ -1,8 +1,8 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import Landing from "./components/Landing";
 import PathComponent from "./components/PathComponent";
 import HomeComponent from "./components/HomeComponent";
-import ErrorPage from './components/ErrorPage'
+import ErrorPage from "./components/ErrorPage";
 import Layout from "./components/Layout";
 import HomeLayout from "./components/HomeLayout";
 import {
@@ -14,17 +14,43 @@ import {
     SignUp,
     useUser,
 } from "@clerk/clerk-react";
+import { useEffect } from "react";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key");
 }
 const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
 
+function NavigateToHome() {
+    const nav = useNavigate();
+    useEffect(() => {
+        nav("/home");
+    }, []);
+
+    return (
+        <>
+            <Outlet />
+        </>
+    );
+}
+
 export default function App() {
     return (
         <ClerkProvider publishableKey={clerkPubKey}>
             <Routes>
-                <Route path="/" element={<Layout />}>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <SignedIn>
+                                <NavigateToHome />
+                            </SignedIn>
+                            <SignedOut>
+                                <Layout />
+                            </SignedOut>
+                        </>
+                    }
+                >
                     <Route index element={<Landing />} />
 
                     <Route
@@ -53,7 +79,7 @@ export default function App() {
                     />
 
                     <Route
-                        path="home"
+                        path="/home"
                         element={
                             <>
                                 <SignedIn>
@@ -66,8 +92,9 @@ export default function App() {
                         }
                     >
                         <Route index element={<HomeComponent />} />
-                        </Route>
-                        <Route path="*" element={<ErrorPage errorCode={404} />} />
+                    </Route>
+
+                    <Route path="*" element={<ErrorPage errorCode={404} />} />
                 </Route>
             </Routes>
         </ClerkProvider>
