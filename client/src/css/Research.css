@@ -1,0 +1,15 @@
+.pitt-me{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    backgroundImage: url(pittplusme.svg);
+}
+
+.nih{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    backgroundImage: url(nih.png);
+}
