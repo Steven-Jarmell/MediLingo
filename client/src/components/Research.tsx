@@ -2,12 +2,14 @@ import React from 'react';
 import pittImage from '../assets/pittplusme.svg';
 import nihImage from '../assets/nihclinicaltrials.png';
 import rmImage from '../assets/rm.svg';
+import researchImage from '../assets/researchimage.png';
 import '../css/Research.css';
 
 const Research: React.FC = () => {
     return (
         <div className="landing-container">
             <div className="landing-container__left">
+            <img src={researchImage} alt="Research" className="research-landing-image" />
                 <h1 className="landing-title">Participate in Asthma Research</h1>
                 <p className="landing-message">
                     Participating in asthma research is a chance for you to make a difference. Not only can 
@@ -58,6 +60,28 @@ const Research: React.FC = () => {
                         </button>
                     </a>
                 </div>
+            </div>
+
+            <div className="landing-container__additional-resources">
+                <h2>Additional Resources</h2>
+                <p>
+                    We encourage you to explore further and stay informed. Consider signing up for newsletters from 
+                    reputable sources to receive the latest updates on asthma research and potential clinical trials 
+                    you can participate in.
+                </p>
+                <div className="landing__newsletter-signup">
+                    <input type="email" placeholder="Your email address" className="newsletter-input" />
+                    <button className="newsletter-button">Sign Up</button>
+                </div>
+                
+                <h3>Active Clinical Trials </h3>
+                <p>Join today and help better yourself and others!</p>
+                <ul className="landing__resource-links">
+                    <li><a href="https://clinicaltrials.gov/study/NCT03228134?cond=Asthma&aggFilters=status:rec%20not&rank=3" target="_blank" rel="noopener noreferrer">Clinical Study on Treatment of Chronic Persistent Bronchial Asthma</a></li>
+                    <li><a href="https://clinicaltrials.gov/study/NCT05632081?cond=Asthma&aggFilters=status:rec%20not&rank=4" target="_blank" rel="noopener noreferrer">A Study of Step-up in Bronchial Asthma as a New End Point (SURFE) (SURFE)</a></li>
+                    <li><a href="https://clinicaltrials.gov/study/NCT05363202?cond=Asthma&aggFilters=status:rec%20not&rank=5" target="_blank" rel="noopener noreferrer">To Study Generic Fluticasone Propionate Inhalation Aerosol for the Treatment of Bronchial Asthma</a></li>
+
+                </ul>
             </div>
         </div>
     );
