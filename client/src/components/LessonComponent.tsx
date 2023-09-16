@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import LessonHeader from "./LessonHeader";
 import Confetti from "react-confetti";
 
-const questionTypes = ["General", "Allergic", "Non-Allergic", "Exercise"];
+const questionTypes = ["General", "Allergic", "Non-Allergic", "Steroid", "Exercise-Induced"];
 
 const LessonComponent = () => {
     const { id } = useParams();
