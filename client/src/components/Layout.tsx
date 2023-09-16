@@ -4,7 +4,7 @@ const Layout = () => {
     return (
         <>
             <Outlet />
-            <p className="text-center fixed bottom-0 w-full">Made with ❤️</p>
+            <p className="text-center fixed bottom-[24px] w-full">Made with ❤️</p>
         </>
     );
 };
