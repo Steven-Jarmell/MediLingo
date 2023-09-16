@@ -1,0 +1,25 @@
+{
+    "questionText": "Which of the following can be triggers for asthma symptoms?",
+    "openEnded": false,
+    "category": "Asthma",
+    "saveToProfile": false,
+    "options": [
+        "Dust",
+        "Pollen",
+        "Smoke",
+        "Pet dander",
+        "Exercise",
+        "Cold air",
+        "Stress",
+        "None of the above"
+    ],
+    "correctOption": [
+        "Dust",
+        "Pollen",
+        "Smoke",
+        "Pet dander",
+        "Exercise",
+        "Cold air",
+        "Stress"
+    ]
+}
