@@ -8,7 +8,7 @@ const h = window.innerHeight;
 console.log("w: " + w);
 console.log("h: " + h);
 
-const initialEdges = [{ id: 'e0-1', source: '0', target: '1', animated: true},
+const initialEdges = [{ id: 'e0-1', source: '0', target: '1', animated: true },
                         { id: 'e0-2', source: '0', target: '2', animated: true },
                         { id: 'e0-3', source: '0', target: '3', animated: true },
                         { id: 'e0-4', source: '0', target: '4', animated: true },
@@ -44,6 +44,11 @@ const PathComponent = () => {
         if(completed_lessons?.includes(element.id)) {
             element.data.label = element.data.label + ' Completed!' 
             element.className = "completed_tree_node";
+            initialEdges.forEach(edge => {
+                if(element.id === edge.id[edge.id.length - 1]) {
+                    edge.animated = false;
+                }
+            })
         }
     });
 

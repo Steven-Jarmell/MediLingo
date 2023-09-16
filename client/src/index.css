@@ -30,3 +30,8 @@ html, body {
     --secondary-theme: #3FD0C9;
     --main-theme: #32CD32;
 }
+
+.react-flow__edge-path {
+    stroke-width: 4 !important;
+    stroke: black !important;
+}
