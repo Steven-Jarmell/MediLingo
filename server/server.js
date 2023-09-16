@@ -15,7 +15,28 @@ const questionSchema = new mongoose.Schema({
   correctOption: [String],
 });
 
+// Define a User schema for question data
+const userSchema = new mongoose.Schema({
+    fullName: String,
+    primaryEmailAddress: {
+      address: String,
+      verified: Boolean,
+    },
+    primaryPhoneNumber: {
+      number: String,
+      verified: Boolean,
+    },
+    externalAccounts: [
+      {
+        provider: String,
+        externalId: String,
+        verified: Boolean,
+      },
+    ],
+  });
+
 // Create a Mongoose model based on the schema
+const User = mongoose.model('User', userSchema);
 const Question = mongoose.model('Question', questionSchema);
 
 // CRUD routes for questions
@@ -85,10 +106,12 @@ app.delete('/questions/:id', async (req, res) => {
 
 const start = async () => {
   try {
-    await mongoose.connect('SECRET');
+    await mongoose.connect('SECRET',{   
+        useNewUrlParser: true,
+        useUnifiedTopology: true,});
     app.listen(PORT, () => {
       console.log(`Server is Successfully Running, and App is listening on port ${PORT}`);
-    });
+    }); 
   } catch (error) {
     console.error('Error occurred, server can\'t start', error);
   }
