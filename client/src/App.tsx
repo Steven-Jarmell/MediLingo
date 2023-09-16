@@ -2,6 +2,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Landing from "./components/Landing";
 import PathComponent from "./components/PathComponent";
 import HomeComponent from "./components/HomeComponent";
+import ErrorPage from './components/ErrorPage'
 import Layout from "./components/Layout";
 import HomeLayout from "./components/HomeLayout";
 import {
@@ -65,10 +66,8 @@ export default function App() {
                         }
                     >
                         <Route index element={<HomeComponent />} />
-                        <Route path="path">
-                            <Route path=":id" element={<PathComponent />} />
                         </Route>
-                    </Route>
+                        <Route path="*" element={<ErrorPage errorCode={404} />} />
                 </Route>
             </Routes>
         </ClerkProvider>
