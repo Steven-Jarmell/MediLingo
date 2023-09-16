@@ -6,6 +6,7 @@ const questionTypes = ["General", "Allergic", "Non-Allergic"]
 const LessonComponent = () => {
     const { id } = useParams();
     const [questions, setQuestions] = useState([]);
+    const [number, setNumber] = useState<number>(0);
 
     // When the page loads, fetch the questionsa
     useEffect(() => {
@@ -26,9 +27,10 @@ const LessonComponent = () => {
         <div>
             <h1>Lesson Page</h1>
             <p>{id}</p>
-            {questions.map(question => (
-                <p>{question.questionType}</p>
-            ))}
+            <p>{questions[number]?.questionText}</p>
+            <p>{number}</p>
+            {questions[number]?.openEnded === true ? <textarea></textarea> : null}
+            <button onClick={() => setNumber(number + 1)}>Increment</button>
         </div>
     );
 };
