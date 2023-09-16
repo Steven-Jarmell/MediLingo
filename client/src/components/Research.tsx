@@ -1,8 +1,10 @@
-
+import React from 'react';
 import pittImage from '../assets/pittplusme.svg';
-import nihImage from '../assets/nih.png';
-import '../css/Research.css'
-const Research = () => {
+import nihImage from '../assets/nihclinicaltrials.png';
+import rmImage from '../assets/rm.svg';  // Import the rm.svg image
+import '../css/Research.css';
+
+const Research: React.FC = () => {
     return (
         <div>
             <h1>Participate in Asthma Research</h1>
@@ -33,6 +35,7 @@ const Research = () => {
                     participation can be a vital key to unlocking these mysteries.
                 </p>
             </section>
+
             <section>
                 <h2>Get Started</h2>
                 <p>
@@ -42,23 +45,28 @@ const Research = () => {
                 <ul>
                     <li>
                         <a href="https://pittplusme.org/" target="_blank" rel="noopener noreferrer">
-                            {/* Updated Pitt link to be a button with the image */}
-                            <button className = "pitt-me" style={{
+                            <button className="pitt-me" style={{
                                 backgroundImage: `url(${pittImage})`,
-                                
-                            }}>
-                            </button>
-                        </a>
-                    </li><li>
-                        <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">
-                            <button className = "nih" style={{
-                                backgroundImage: `url(${nihImage})`,
-                                
                             }}>
                             </button>
                         </a>
                     </li>
-                    <li><a href="https://research-link-3.com" target="_blank" rel="noopener noreferrer">Research Link 3</a></li>
+                    <li>
+                        <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer">
+                            <button className="nih" style={{
+                                backgroundImage: `url(${nihImage})`,
+                            }}>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.researchmatch.org/" target="_blank" rel="noopener noreferrer">
+                            <button className="research-match" style={{
+                                backgroundImage: `url(${rmImage})`,  // Use the rm.svg image as a background
+                            }}>
+                            </button>
+                        </a>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -66,5 +74,6 @@ const Research = () => {
 };
 
 export default Research;
+
 
 
