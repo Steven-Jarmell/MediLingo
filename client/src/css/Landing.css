@@ -38,8 +38,9 @@
 }
 
 .landing-image {
-    height: 20rem;
-    width: 22rem;
+    padding-top: 8rem;
+    height: 29rem;
+    width: 20rem;
 }
 
 .landing__buttons-container {
