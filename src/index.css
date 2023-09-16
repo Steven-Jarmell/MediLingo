@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dosis&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, 
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Bangers', cursive;
+    font-family: 'Dosis', sans-serif;
+}
