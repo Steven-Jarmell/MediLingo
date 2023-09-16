@@ -1,0 +1,66 @@
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 65vw;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 8rem;
+}
+
+.landing-container__left {
+    display: flex;
+    flex: .5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-title {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.landing-message {
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+.landing-container__right {
+    display: flex;
+    flex: .5;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-image {
+    height: 20rem;
+    width: 22rem;
+}
+
+.landing__buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.landing-button {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.landing-button__login {
+    background-color: var(--main-theme);
+}
+
+.landing-button__signup {
+    background-color: var(--secondary-theme);
+}
