@@ -75,6 +75,21 @@ const LessonComponent = () => {
     };
 
     if (isCompleted) {
+        // Get the lessons the user completed
+        let lessonsCompleted = localStorage.getItem('lessons-completed')
+
+        // If the user has completed lessons, get a list of lessons
+        let lessonsCompletedList: string[] = []
+        if (lessonsCompleted !== null) {
+            lessonsCompletedList = lessonsCompleted.split(';')
+        }
+
+        // If this lesson is not in the id, add it and push to local storage
+        if (!lessonsCompletedList.includes(id!)) {
+            lessonsCompletedList.push(id! + ';')
+            localStorage.setItem('lessons-completed', lessonsCompletedList.toString())
+        }
+
         return (
             <div className="mt-8">
                 <Confetti width={width} height={height} />
