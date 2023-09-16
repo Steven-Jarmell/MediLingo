@@ -17,13 +17,13 @@
 .option-card__container:hover {
     cursor: pointer;
     /* Firefox */
-    -moz-transition: all .25s ease-in;
+    -moz-transition: all .15s ease-in;
     /* WebKit */
-    -webkit-transition: all .25s ease-in;
+    -webkit-transition: all .15s ease-in;
     /* Opera */
-    -o-transition: all .25s ease-in;
+    -o-transition: all .15s ease-in;
     /* Standard */
-    transition: all .25s ease-in;
+    transition: all .15s ease-in;
 
     background-color: var(--secondary-theme);
 }

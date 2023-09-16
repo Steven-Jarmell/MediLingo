@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ReactFlow from "react-flow-renderer";
+import "../css/Trees.css"
 
 const w = window.innerWidth;
 const h = window.innerHeight;
@@ -18,19 +19,13 @@ const initialEdges = [{ id: 'e0-1', source: '0', target: '1', animated: true},
 
 const PathComponent = () => {
 
-    const flowStyle = {
-        'font-size': '20px',
-        'width': '300px',
-        
-    };
-
     const initialNodes = [
-        { id: '0', position: {x: w/2-150, y:0}, data: { label: 'Asthma' }, style: flowStyle },
-        { id: '1', position: {x: w*(1/8)-150, y: h/8}, data: { label: 'Allergenic Asthma'}, style: flowStyle },
-        { id: '2', position: {x: w*(3/8)-150, y: h/8}, data: { label: 'Non-Allergenic Asthma'}, style: flowStyle },
-        { id: '3', position: {x: w*(5/8)-100, y: h/8}, data: { label: 'Steroid-Resistant Asthma'}, style: flowStyle },
-        { id: '4', position: {x: w*(7/8)-100, y: h/8}, data: { label: 'Exercise-Induced Asthma'}, style: flowStyle },
-        { id: '5', position: {x: w/2-150, y: h/2}, data: { label: 'Resources'}, style: flowStyle },
+        { id: '0', position: {x: w/2-150, y:0}, data: { label: 'Asthma' }, className: "tree_node" },
+        { id: '1', position: {x: w*(1/8)-150, y: h/8}, data: { label: 'Allergenic Asthma'}, className: "tree_node"},
+        { id: '2', position: {x: w*(3/8)-150, y: h/8}, data: { label: 'Non-Allergenic Asthma'}, className: "tree_node" },
+        { id: '3', position: {x: w*(5/8)-100, y: h/8}, data: { label: 'Steroid-Resistant Asthma'}, className: "tree_node" },
+        { id: '4', position: {x: w*(7/8)-100, y: h/8}, data: { label: 'Exercise-Induced Asthma'}, className: "tree_node" },
+        { id: '5', position: {x: w/2-200, y: h/2}, data: { label: 'Resources'}, className: "resources_node" },
     ];
 
     const navigate = useNavigate();

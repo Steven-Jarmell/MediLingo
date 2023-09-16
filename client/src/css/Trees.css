@@ -1,0 +1,43 @@
+.tree_node {
+    font-size: 20px !important;
+    width: 300px !important;
+    border-radius: 10px !important;
+}
+
+.tree_node:hover {
+    cursor: pointer !important;
+    /* Firefox */
+    -moz-transition: all .15s ease-in !important;
+    /* WebKit */
+    -webkit-transition: all .15s ease-in !important;
+    /* Opera */
+    -o-transition: all .15s ease-in !important;
+    /* Standard */
+    transition: all .15s ease-in !important;
+
+    background-color: var(--secondary-theme) !important;
+
+    box-shadow: 2px 2px 2px !important;
+}
+
+.resources_node {
+    font-size: 32px !important;
+    width: 400px !important;
+    border-radius: 10px;
+}
+
+.resources_node:hover {
+    cursor: pointer !important;
+    /* Firefox */
+    -moz-transition: all .25s ease-in !important;
+    /* WebKit */
+    -webkit-transition: all .25s ease-in !important;
+    /* Opera */
+    -o-transition: all .25s ease-in !important;
+    /* Standard */
+    transition: all .25s ease-in !important;
+
+    background-color: var(--secondary-theme) !important;
+
+    box-shadow: 2px 2px 2px !important;
+}
