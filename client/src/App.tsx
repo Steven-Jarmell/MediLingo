@@ -14,6 +14,7 @@ import {
     SignUp,
 } from "@clerk/clerk-react";
 import LessonComponent from "./components/LessonComponent";
+import Research from "./components/Research";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
     throw new Error("Missing Publishable Key");
@@ -76,6 +77,8 @@ export default function App() {
                         <Route path="lesson">
                             <Route path=":id" element={<LessonComponent />} />
                         </Route>
+
+                        <Route path="research" element={<Research />} />
                     </Route>
 
                     <Route path="*" element={<ErrorPage errorCode={404} />} />
