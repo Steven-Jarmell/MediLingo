@@ -1,19 +1,63 @@
+import { useState } from "react"
+
 type QuestionProps = {
     question: string
-    choices: string[]
-    answer: string
+    openEnded: boolean
+    category: string
+    options: string[]
+    correctOptions: string[]
 }
 
-const Question = ({ question, choices, answer }: QuestionProps) => {
+const Question = ({
+  question,
+  openEnded,
+  category,
+  options,
+  correctOptions,
+}: QuestionProps) => {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+
+  const checkAnswer = (option: string) => {
+    setSelectedOption(option);
+    if (correctOptions.includes(option)) {
+      setShowAnswer(true);
+    } else {
+      setShowAnswer(false);
+    }
+  };
+
+  return (
     <div>
-        <div className="w-full h-1/2 text-center font-bold">
-            { question }
+      <div className="rounded w-full h-fit border-spacing-3 text-center">
+        {question}
+      </div>
+      <div>
+        {options.map((option, index) => (
+          <button
+            key={index}
+            className="text-center w-full h-fit border-spacing-3"
+            onClick={() => checkAnswer(option)}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+      {showAnswer && (
+        <div className="rounded w-full h-fit border-spacing-3 text-center">
+          {correctOptions.map((answer, index) => (
+            <div
+              id="answer"
+              key={index}
+              className="text-center w-full h-fit border-spacing-3"
+            >
+              {answer}
+            </div>
+          ))}
         </div>
-        <div>
-        
-        </div>
+      )}
     </div>
-        
-}
+  );
+};
 
 export default Question
