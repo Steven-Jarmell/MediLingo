@@ -86,8 +86,9 @@ const LessonComponent = () => {
 
         // If this lesson is not in the id, add it and push to local storage
         if (!lessonsCompletedList.includes(id!)) {
-            lessonsCompletedList.push(id! + ';')
-            localStorage.setItem('lessons-completed', lessonsCompletedList.toString())
+            lessonsCompletedList.push(id!)
+            const lessonsString = lessonsCompletedList.reduce((accumulator, next) => accumulator + (';' + next))
+            localStorage.setItem('lessons-completed', lessonsString)
         }
 
         return (
