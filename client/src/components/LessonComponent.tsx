@@ -30,6 +30,8 @@ const LessonComponent = () => {
             <p>{questions[number]?.questionText}</p>
             <p>{number}</p>
             {questions[number]?.openEnded === true ? <textarea></textarea> : null}
+            {questions[number]?.openEnded === false ? questions[number]["options"].map(option => (<p>{option}</p>)) : null }
+            
             <button onClick={() => setNumber(number + 1)}>Increment</button>
         </div>
     );

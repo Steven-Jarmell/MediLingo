@@ -1,0 +1,14 @@
+[
+    {
+        "name": "asthma",
+        "lessons": {
+            "general" : {
+                "sublessons": {
+                    "1": "Allergic Asthma",
+                    "2": "Non-Allergic Asthma",
+                    "3": "Steroid-Resistant Asthma"
+                }
+            }
+        }
+    }
+]
