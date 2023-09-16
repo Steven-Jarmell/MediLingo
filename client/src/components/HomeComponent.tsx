@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import OptionCard from "./OptionCard";
 
 const options = [
@@ -8,8 +9,19 @@ const options = [
 ];
 
 const HomeComponent = () => {
+
+    useEffect(() => {
+        const getData = async () => {
+            const req = await fetch('http://localhost:3000/questions', {
+                method: "GET",
+                
+            }).then(res => res.json()).then((data) => console.log(data))
+            console.log(req)
+        }
+        getData();
+    }, [])
     return (
-        <div className="flex h-full w-full justify-center mt-60 gap-32">
+        <div className="flex justify-center mt-40 gap-32">
             {options.map((option) => (
                 <OptionCard
                     key={option.name}
