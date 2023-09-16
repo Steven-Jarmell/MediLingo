@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import LessonHeader from "./LessonHeader";
 
-const questionTypes = ["General", "Allergic", "Non-Allergic"]
+const questionTypes = ["General", "Allergic", "Non-Allergic", "Exercise"]
 
 const LessonComponent = () => {
     const { id } = useParams();
@@ -25,10 +26,8 @@ const LessonComponent = () => {
 
     return (
         <div>
-            <h1>Lesson Page</h1>
-            <p>{id}</p>
-            <p>{questions[number]?.questionText}</p>
-            <p>{number}</p>
+            <LessonHeader number={number} numQuestions={questions.length}/>
+            <p className="text-center font-bold text-4xl">{questions[number]?.questionText}</p>
             {questions[number]?.openEnded === true ? <textarea></textarea> : null}
             {questions[number]?.openEnded === false ? questions[number]["options"].map(option => (<p>{option}</p>)) : null }
             
