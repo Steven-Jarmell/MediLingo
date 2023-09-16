@@ -3,6 +3,10 @@
     border-radius: 5px;
     padding: 4rem 3.5rem;
     background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .option-card__name {

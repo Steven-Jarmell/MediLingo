@@ -9,7 +9,7 @@ import covid from "../assets/covid.png";
 const options = [
     { name: "Asthma", path: "/asthma", imgSrc: asthma },
     { name: "Diabetes", path: "/diabetes", imgSrc: diabetes },
-    { name: "stomach", path: "/stomach", imgSrc: stomach },
+    { name: "Stomachache", path: "/stomach", imgSrc: stomach },
     { name: "Covid", path: "/covid", imgSrc: covid },
 ];
 
