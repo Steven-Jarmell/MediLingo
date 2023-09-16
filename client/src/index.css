@@ -7,7 +7,7 @@ html, body {
     background-color: #f0f0f0;
     background-image: radial-gradient(#d0d0d0 2px, #f0f0f0 2px);
     background-size: 20px 20px; /* Adjusted the background size to make the dots bigger */
-    animation: moveBackground 1s linear infinite;
+    animation: moveBackground 3s linear infinite;
 }
 
 @keyframes moveBackground {
