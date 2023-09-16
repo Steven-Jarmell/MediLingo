@@ -5,8 +5,11 @@
 
 html, 
 body {
-    background: radial-gradient(circle, #fff0a5, #ffa3a3);
+    background-color: #f0f0f0;
+    background-image: radial-gradient(#d0d0d0 1px, #f0f0f0 1px);
+    background-size: 10px 10px;
 }
+
 
 #root {
     height: 100%;
