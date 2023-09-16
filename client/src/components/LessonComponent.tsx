@@ -10,6 +10,7 @@ const LessonComponent = () => {
     const [answer, setAnswer] = useState("");
     const [isCorrect, setIsCorrect] = useState(null);
     const [showSummary, setShowSummary] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(false);
 
     // When the page loads, fetch the questions
     useEffect(() => {
@@ -32,6 +33,8 @@ const LessonComponent = () => {
                 setAnswer("");
                 setIsCorrect(null);
                 setShowSummary(false);
+            } else {
+                setIsCompleted(true);
             }
         } else {
             if (questions[number]?.openEnded) {
@@ -49,6 +52,15 @@ const LessonComponent = () => {
             }
         }
     };
+
+    if (isCompleted) {
+        return (
+            <div>
+                <h1>Congratulations!</h1>
+                <p>You have completed lesson {id}.</p>
+            </div>
+        );
+    }
 
     return (
         <div>
