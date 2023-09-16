@@ -1,5 +1,12 @@
-const PathComponent = () => {
-    return <div>Path Component</div>
-}
+import { useParams } from "react-router-dom";
 
-export default PathComponent
+const PathComponent = () => {
+    const { condition } = useParams();
+    return (
+        <div>
+            <div>{condition}</div>Path Component
+        </div>
+    );
+};
+
+export default PathComponent;
