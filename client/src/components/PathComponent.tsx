@@ -40,7 +40,7 @@ const PathComponent = () => {
             navigate("../../lesson/" + node.id);
         }
     };
-
+    
     const completed_lessons = localStorage.getItem('lessons-completed')?.split(';');
     initialNodes.forEach(element => {
         if(completed_lessons?.includes(element.id)) {
