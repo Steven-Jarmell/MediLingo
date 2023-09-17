@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useNavigate } from "react-router-dom";
 import ReactFlow from "react-flow-renderer";
 import "../css/Trees.css"

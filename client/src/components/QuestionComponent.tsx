@@ -10,8 +10,6 @@ type QuestionProps = {
 
 const Question = ({
   question,
-  openEnded,
-  category,
   options,
   correctOptions,
 }: QuestionProps) => {

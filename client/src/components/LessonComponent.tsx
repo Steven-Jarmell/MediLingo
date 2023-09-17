@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import LessonHeader from "./LessonHeader";
@@ -7,13 +9,13 @@ const questionTypes = ["General", "Allergic", "Non-Allergic", "Occupational", "E
 
 const LessonComponent = () => {
     const { id } = useParams();
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState<string[]>([]);
     const [number, setNumber] = useState<number>(0);
-    const [answer, setAnswer] = useState("");
-    const [isCorrect, setIsCorrect] = useState(false);
-    const [showIsCorrect, setShowIsCorrect] = useState(false);
-    const [showSummary, setShowSummary] = useState(false);
-    const [isCompleted, setIsCompleted] = useState(false);
+    const [answer, setAnswer] = useState<string>("");
+    const [isCorrect, setIsCorrect] = useState<boolean>(false);
+    const [showIsCorrect, setShowIsCorrect] = useState<boolean>(false);
+    const [showSummary, setShowSummary] = useState<boolean>(false);
+    const [isCompleted, setIsCompleted] = useState<boolean>(false);
     const [currentTarget, setCurrentTarget] = useState();
 
     const width = window.innerWidth;

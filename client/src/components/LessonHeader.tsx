@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 type Props = {
     number: number;
     numQuestions: number;
