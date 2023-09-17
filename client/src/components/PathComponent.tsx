@@ -87,7 +87,7 @@ const PathComponent = () => {
     });
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-4">
             <span className="text-center text-3xl mb-6">Click on Asthma to learn general Asthma information, then continue on to other paths!</span>
             <div className="flex justify-center w-screen h-screen">
                 <ReactFlow

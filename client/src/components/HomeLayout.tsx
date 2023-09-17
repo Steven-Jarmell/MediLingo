@@ -6,7 +6,7 @@ import "../css/HomeLayout.css";
 const HomeLayout = () => {
     return (
         <>
-            <div className="flex justify-center items-center p-4">
+            <div className="flex justify-center items-center p-3 border border-r-4 border-black">
                 <div className="layout-image">
                     <img src={firstAidKit} />
                 </div>
