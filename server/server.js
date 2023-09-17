@@ -5,7 +5,7 @@ const cors = require('cors')
 const app = express();
 mongoose.set('strictQuery', false);
 app.use(express.json());
-app.use(cors())
+app.use(cors(["https://pitt-challenge-2023.vercel.app/", "http://localhost:5173"]))
 const PORT = 3000;
 
 // Define a Mongoose schema for the question data
