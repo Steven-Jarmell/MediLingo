@@ -1,6 +1,6 @@
 
-## MediLingo
-# Pitt-Challenge-2023
+# MediLingo
+## Pitt-Challenge-2023
 MediLingo is a relaxed, game-based learning platform for users to explore different medical conditions. It's built with React, TypeScript, and Vite.
 
 ### Awards
